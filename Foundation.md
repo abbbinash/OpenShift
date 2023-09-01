@@ -45,3 +45,15 @@
 - Provides permanent IP address and hostname for the Applications.
 
 
+## Deployment Strategies
+
+Deployment strategy we can use RollingUpdate & Recreate.
+- **RollingUpdate**: 
+  - This is used when you want to graudally roll out without downtime.
+  - Here new pods are created along with the older ones and thet graduallly replaced one by one.
+- **Recreate**: 
+  - This is a simplest strategy when you want to recreate all the pods at once.
+  - All the pods are terminated and new pods generates. This will give a brief downtime.
+
+
+
