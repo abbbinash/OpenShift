@@ -88,9 +88,26 @@ oc rollout undo deployment/<dep-name> --to-revision 1
 
 ```
 oc annotate deployment/myapp2 kubernetes.io/change-cause="Image updated to 1-86"
+
+```
+## Restart Policy
+
+- Always -> Cluster will always try to restart the exited container. Default policy is restart.
+- OnFailure -> Restarts when there is failed containers in the pod.
+- Never -> Won't restart the failed or exited containers. Insted pod will instantly fail and exit.
+
+**Example**
+```
+oc run -it my-app \
+--image registry.access.redhat.com/ubi9/ubi \
+--restart Never
 ```
 
-## Image Stream
+## NOTE
+```
+For some containerized applications we need to set the environment variable to run the application
+
+```
 
 
 
