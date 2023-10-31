@@ -34,3 +34,17 @@
 
    - Basically scaling horizontally is scaling out that means increaseing the number of replicas.
    - Scaling vertically means scaling the resource request and resource limit in the pod.
+
+5. Purpose of HPA in OpenShift.
+
+   - Horizontal Pod autoscaller basically used when we need to scale out the pods. When the load request is high we need to automatically scale the pods. So for that we use HPA.
+   - We can use **oc autoscale deployment <deployment-name> --cpu-percent=50 --min=2 --max=10**
+
+6. What is a Rolling Deployment strategy in OpenShift, and when would you use it?
+
+    - There are mainly 2 deployment strategy(deployment rollout). Blue greeen and canary. Other than these there is also recreate and Rolling update
+    - In blue green strategy we mainly devide our application environment into 2 parts where we redirect our application traffic using load balancer to one part. Then we deploy our new application update to the other half.
+    - In canary deployment 
+    - In Recreate strategy what we do is, we kill all the pods and another set of pods will be deployed. But there will be some downtime.
+    - In rolling update we will replace pods one by one with the latest version.
+    - 
